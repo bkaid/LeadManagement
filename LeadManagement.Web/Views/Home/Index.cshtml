@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+<div class="jumbotron">
+    <h1>Lead Management</h1>
+    <p class="lead">Lead Management is a demo ASP.NET MVC 5 application.</p>
+    <p><a href="@Url.LeadUrl()" class="btn btn-primary btn-lg">Get A Lead &raquo;</a></p>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2><span class="glyphicon glyphicon-user"></span> User Management</h2>
+        <p>This demo application features basic user management including the ability to create an account and log in.</p>
+    </div>
+    <div class="col-md-4">
+        <h2><span class="glyphicon glyphicon-globe"></span> Atomic Leads</h2>
+        <p>When the user logs in, they can retrieve a 'lead' from the database. This action will be safe across multiple web servers, meaning no 2 users could possibly receive the same row at the same time.</p>
+    </div>
+    <div class="col-md-4">
+        <h2><span class="glyphicon glyphicon-floppy-disk"></span> Entity Framework</h2>
+        <p>This demo application uses Entity Framework for its data access layer.</p>
+    </div>
+</div>

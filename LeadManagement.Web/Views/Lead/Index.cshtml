@@ -1,0 +1,83 @@
+﻿@model LeadViewModel
+@{
+    ViewBag.Title = "Lead";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@if (TempData.ContainsKey("Flash")) 
+{ 
+    <div class="alert alert-success">@TempData["Flash"]</div>
+}
+
+@if (Model != null)
+{
+    <form action="@Url.ProcessLeadUrl(Model.Id)" method="POST" class="form-horizontal" role="form">
+        <div class="row">
+            <div class="col-sm-3">
+                <div>
+                    <label>First Name:</label>
+                    <span>@Model.FirstName</span>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <label>Last Name:</label>
+                <span class="form-control-static">@Model.LastName</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div>
+                    <label>Address:</label>
+                    <span>@Model.Address</span>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <label>City:</label>
+                <span>@Model.City</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div>
+                    <label>State:</label>
+                    <span>@Model.State</span>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <label>Zip:</label>
+                <span>@Model.Zip</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <div>
+                    <label>Email:</label>
+                    <span>@Model.Email</span>
+                </div>
+            </div>
+            <div class="col-sm-9">
+                <label>Phone:</label>
+                <span>@Model.Phone</span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div>
+                    <label>Occupation:</label>
+                    <span>@Model.Occupation</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3">
+                <br />
+                <button type="submit" class="btn btn-default">Process Lead</button>
+            </div>
+        </div>
+    </form>
+}
+else
+{
+    <p>No leads found.</p>
+}
